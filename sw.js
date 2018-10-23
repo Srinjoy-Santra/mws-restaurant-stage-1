@@ -1,4 +1,4 @@
-let staticCacheName = 'reviews-cache';
+let staticCacheName = 'restaurant-cache';
 let urlsToCache = [
 	'./',
 	'./index.html',
@@ -38,7 +38,7 @@ self.addEventListener('activate', function (event) {
 		caches.keys().then(function (cacheNames) {
 			return Promise.all(
 				cacheNames.filter(function (cacheName) {
-					return cacheName.startsWith('reviews-') &&
+					return cacheName.startsWith('restaurant-') &&
 						cacheName != staticCacheName;
 				}).map(function (cacheName) {
 					return caches.delete(cacheName);
